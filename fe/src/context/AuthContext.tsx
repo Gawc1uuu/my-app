@@ -21,7 +21,6 @@ const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<any>(null)
 
     useEffect(() => {
-
         supabase.auth.getSession().then(({ data }) => {
             return setUser(data?.session?.user ?? null)
         })
