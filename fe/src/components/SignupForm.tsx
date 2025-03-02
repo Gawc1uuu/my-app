@@ -4,19 +4,17 @@ import { Input } from './ui/input'
 import { Button } from './ui/button'
 import { supabase } from '@/lib/supabaseClient'
 import { FormEvent, useState } from 'react'
+import useAuthContext from '@/hooks/useAuthContext'
 
 const SignupForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState<string | null>(null)
-
+    const { signUp } = useAuthContext()
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
-        const { data, error } = await supabase.auth.signUp({
-            email: email,
-            password: password
-        })
+        const { data, error } = await signUp(email, password)
 
         if (error) {
             setErrorMsg(error.message)

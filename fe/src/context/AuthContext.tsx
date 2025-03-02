@@ -50,6 +50,11 @@ const AuthContextProvider = ({ children }: { children: ReactNode }) => {
         const { data, error } = await supabase.auth.signUp({
             email,
             password,
+            options: {
+                data: {
+                    role: "user"
+                }
+            }
         })
         return { data, error }
     }
