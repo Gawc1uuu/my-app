@@ -1,14 +1,11 @@
-import { useState } from 'react'
+import { Button } from './components/ui/button'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Hello world</h1>
-      <p>{count}</p>
-      <button onClick={() => setCount(prev => prev - 1)}>-</button>
-      <button onClick={() => setCount(prev => prev + 1)}>+</button>
+      <h1 className='text-2xl text-red-400'>Hello world</h1>
+      <Button variant='link'>Click me</Button>
     </>
   )
 }
