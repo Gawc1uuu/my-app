@@ -29,7 +29,7 @@ const UsersContextProvider = ({ children }: { children: ReactNode }) => {
     const [error, setError] = useState<string | null>(null);
 
     const verifyAdmin = () => {
-        if (!user || user.role !== 'admin') {
+        if (!user || user?.user_metadata.role !== 'admin') {
             throw new Error('Unauthorized');
         }
     };

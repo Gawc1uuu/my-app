@@ -20,7 +20,7 @@ const AdminPanel = () => {
 
     useEffect(() => {
         const loadData = async () => {
-            if (user?.role === 'admin') {
+            if (user?.user_metadata.role === 'admin') {
                 try {
                     await refreshUsers()
                 } catch (error) {
