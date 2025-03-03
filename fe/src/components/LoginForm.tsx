@@ -2,11 +2,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
-import { supabase } from '@/lib/supabaseClient'
 import { FormEvent, useState } from 'react'
 import useAuthContext from '@/hooks/useAuthContext'
 
-const SignupForm = () => {
+const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState<string | null>(null)
@@ -57,4 +56,4 @@ const SignupForm = () => {
     )
 }
 
-export default SignupForm
+export default LoginForm

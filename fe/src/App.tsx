@@ -6,6 +6,7 @@ import useAuthContext from './hooks/useAuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
 import Dashboard from './components/Dashboard'
 import PublicRoute from './components/PublicRoute'
+import AdminPanel from './components/AdminPanel'
 function App() {
 
   const { user } = useAuthContext()
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<ProtectedRoute>
             <Dashboard />
           </ProtectedRoute>} />
+          <Route path='/users' element={<ProtectedRoute><AdminPanel /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </div>

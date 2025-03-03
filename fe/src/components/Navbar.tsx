@@ -10,6 +10,7 @@ import useAuthContext from "@/hooks/useAuthContext"
 
 export function Navbar() {
 
+    const { user } = useAuthContext()
     const { logout } = useAuthContext()
     const navigate = useNavigate()
 
@@ -29,26 +30,41 @@ export function Navbar() {
             </div>
             <NavigationMenu>
                 <NavigationMenuList>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink asChild>
-                            <Link to="/">Home</Link>
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink asChild>
-                            <Link to="/login">Login</Link>
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink asChild>
-                            <Link to="/signup">Sign up</Link>
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink asChild>
-                            <Button onClick={handleLogout}>Logout</Button>
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
+                    {user && user.role === 'admin' && (
+                        <NavigationMenuItem>
+                            <NavigationMenuLink asChild>
+                                <Link to="/users">Users</Link>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
+                    )}
+                    {user && (
+                        <>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link to="/">Home</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Button onClick={handleLogout}>Logout</Button>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        </>
+                    )}
+                    {!user && (
+                        <>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link to="/login">Login</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link to="/signup">Sign up</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        </>
+                    )}
                 </NavigationMenuList>
             </NavigationMenu>
         </nav>
