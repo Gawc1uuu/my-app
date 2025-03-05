@@ -46,6 +46,11 @@ export function Navbar() {
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
+                                    <Link to="/transactions">Transactions</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
                                     <Button onClick={handleLogout}>Logout</Button>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>

@@ -7,6 +7,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Dashboard from './components/Dashboard'
 import PublicRoute from './components/PublicRoute'
 import AdminPanel from './components/AdminPanel'
+import Transactions from './components/Transactions'
 function App() {
 
   const { user } = useAuthContext()
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<PublicRoute><LoginForm /></PublicRoute>} />
           <Route path='/signup' element={<PublicRoute><SignupForm /></PublicRoute>} />
+          <Route path="/transactions" element={<ProtectedRoute><Transactions /></ProtectedRoute>} />
           <Route path="/" element={<ProtectedRoute>
             <Dashboard />
           </ProtectedRoute>} />

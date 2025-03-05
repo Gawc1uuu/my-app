@@ -32,7 +32,7 @@ export async function transactionRoutes(fastify: FastifyInstance) {
             const { user } = request as any
             const transactions = await db.select()
                 .from(transactionsTable)
-                .where(eq(transactionsTable.userId, user.id))
+
 
             return reply.send(transactions)
         } catch (error) {
