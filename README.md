@@ -1,4 +1,8 @@
 # my-app
+I completed most of the tasks, but I’m aware that there are a lot of flaws. The project is still very much a demo—filters and pagination should be handled on the server rather than the client. I also chose React instead of Next.js because it was faster for prototyping. I took your advice and made a lot of shortcuts, which I’m fully aware of. The scope of the task was quite large, and completing it within seven days was challenging. I’m happy to discuss the project in more detail and explain my reasoning behind the decisions I made. I’m also open to feedback and suggestions on how to improve the project. I’m looking forward to hearing from you. Thank you for the opportunity to work on this project. 
+I also addes some mocked transactions because transaction handling wasnt specified in specs.
+
+
 
 I completed most of the tasks, but I’m aware that there are a lot of flaws. The project is still very much a demo—filters and pagination should be handled on the server rather than the client. I also chose React instead of Next.js because it was faster for prototyping. I took your advice and made a lot of shortcuts, which I’m fully aware of. The scope of the task was quite large, and completing it within seven days was challenging. I’m happy to discuss the project in more detail and explain my reasoning behind the decisions I made. I’m also open to feedback and suggestions on how to improve the project. I’m looking forward to hearing from you. Thank you for the opportunity to work on this project.
 <b>I also addes some mocked transactions because transaction handling wasnt specified in specs.</b>
