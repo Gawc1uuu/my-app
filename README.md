@@ -1,13 +1,20 @@
 # my-app
 
 first of all in folders fe and be you need to create .env file with the following content:
-fe: 
+fe:
+<br/>
 VITE_SUPABASE_URL=
+<br/>
 VITE_SUPABASE_ANON_KEY=
+<br/>
 VITE_SUPABASE_SERVICE_KEY=
+<br/>
 be:
+<br/>
 DATABASE_URL=postgresql://postgres:password@localhost:4321/test
+<br/>
 SUPABASE_SERVICE_ROLE_KEY=
+<br/>
 
 i added .env.example to both of them so you can have an example of how it should look like
 
