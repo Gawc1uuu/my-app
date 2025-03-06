@@ -33,6 +33,7 @@ export async function transactionRoutes(fastify: FastifyInstance) {
             const transactions = await db.select()
                 .from(transactionsTable)
 
+            console.log(transactions)
 
             return reply.send(transactions)
         } catch (error) {

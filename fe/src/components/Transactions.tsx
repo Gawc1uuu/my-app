@@ -4,6 +4,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import { DataTable } from './ui/datatable';
 import { Input } from "./ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import Chart from "./Chart";
 
 const PAGE_SIZE = 5;
 
@@ -116,6 +117,7 @@ const Transactions = () => {
 
     return (
         <div className="p-4 max-w-6xl mx-auto">
+            <Chart transactions={transactions} />
             <div className="mb-4 space-y-4">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {/* Type Filter */}
@@ -194,6 +196,7 @@ const Transactions = () => {
                 totalPages={totalPages}
                 onPageChange={setCurrentPage}
             />
+
         </div>
     );
 };
